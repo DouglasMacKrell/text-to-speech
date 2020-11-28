@@ -10,6 +10,8 @@ playButton.addEventListener('click', () => {
 
 pauseButton.addEventListener('click', pauseText)
 
+stopButton.addEventListener('click', stopText)
+
 function playText(text) {
     if (speechSynthesis.pause && speechSynthesis.speaking) {
         return speechSynthesis.resume()
@@ -25,4 +27,9 @@ function playText(text) {
 
 function pauseText() {
     if (speechSynthesis.speaking) speechSynthesis.pause()
+}
+
+function stopText() {
+    speechSynthesis.resume()
+    speechSynthesis.cancel()
 }
